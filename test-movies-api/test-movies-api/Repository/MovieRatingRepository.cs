@@ -18,9 +18,9 @@ namespace test_movies_api.Repository
             return _context.MovieLevels.ToList();
         }
 
-        public MovieRating Get(int id)
+        public MovieRating Get(int idMovie)
         {
-            return _context.MovieLevels.Find(id);
+            return _context.MovieLevels.Where(b => b.idMovie == idMovie).FirstOrDefault();
         }
 
         public void Save(MovieRating movieRating)

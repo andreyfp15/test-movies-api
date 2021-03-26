@@ -153,3 +153,4 @@ C:\Users\Smart\Source\repos\test-movies-api\test-movies-api\test-movies-api\obj\
 C:\Users\Smart\Source\repos\test-movies-api\test-movies-api\test-movies-api\obj\Debug\netcoreapp3.1\test-movies-api.dll
 C:\Users\Smart\Source\repos\test-movies-api\test-movies-api\test-movies-api\obj\Debug\netcoreapp3.1\test-movies-api.pdb
 C:\Users\Smart\Source\repos\test-movies-api\test-movies-api\test-movies-api\obj\Debug\netcoreapp3.1\test-movies-api.genruntimeconfig.cache
+C:\Users\Smart\Source\repos\test-movies-api\test-movies-api\test-movies-api\obj\Debug\netcoreapp3.1\test-movies-api.csprojAssemblyReference.cache

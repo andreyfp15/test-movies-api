@@ -30,6 +30,17 @@ namespace test_movies_api.Controllers
             return returnApi;
         }
 
+        [HttpGet("{id}")]
+        public Movie Get([FromServices] MovieRatingRepository movieRatingRep, int id)
+        {
+            var movieRating = movieRatingRep.Get(id);
+            var movie = GetMovieTMDB(id);
+
+            movie.rating = movieRating;
+
+            return movie;
+        }
+
         public ReturnApi GetTMDB(int page, string query)
         {
             var uri = string.Format(@"https://api.themoviedb.org/3/search/movie?api_key={0}&language={1}&query={2}&page={3}&include_adult={4}", KEY_TMDB, LANG, query, page, INCLUDE_ADULT);
@@ -41,6 +52,19 @@ namespace test_movies_api.Controllers
                 return JsonConvert.DeserializeObject<ReturnApi>(response.Content.ReadAsStringAsync().Result);
 
             return new ReturnApi();
+        }
+
+        public Movie GetMovieTMDB(int id)
+        {
+            var uri = string.Format(@"https://api.themoviedb.org/3/movie/{0}?api_key={1}&language={2}", id, KEY_TMDB, LANG);
+
+            var httpreq = new HttpClient();
+            var response = httpreq.GetAsync(uri).Result;
+
+            if (response.IsSuccessStatusCode)
+                return JsonConvert.DeserializeObject<Movie>(response.Content.ReadAsStringAsync().Result);
+
+            return new Movie();
         }
     }
 }
