@@ -1,4 +1,4 @@
-# Teste Movie API
+# Test Movie API
 Solution contendo API test_movie
 
 ### Pré-requisitos
